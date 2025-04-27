@@ -89,7 +89,7 @@ class ThingsResource:
             try:
                 response = requests.post(FORWARD_TEXT_URL, data=decoded.tobytes(), headers={'Content-Type': 'application/json; charset=UTF-8'})
             except requests.ConnectionError as e:
-                raise falcon.HTTPServiceUnavailable(title="Ошибка подключения к сетевому уровню.")
+                raise falcon.HTTPServiceUnavailable(title="Ошибка подключения к трансопртному уровню.")
             if (response.status_code == 200):
                 resp.status = falcon.HTTP_200
                 resp.content_type = falcon.HTTP_NO_CONTENT

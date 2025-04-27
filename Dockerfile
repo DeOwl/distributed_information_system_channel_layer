@@ -9,4 +9,4 @@ ENV PATH="/opt/conda/envs/$(head -1 /environment.yml | cut -d' ' -f2)/bin:$PATH"
 ADD /app /
 SHELL ["conda", "run", "-n", "channel_layer", "/bin/bash", "-c"]
 # Run with uvicorn
-CMD ["conda", "run", "-n", "channel_layer", "--no-capture-output", "uvicorn", "channel_layer:app", "--host", "172.19.0.2", "--port", "9000"]
+CMD ["conda", "run", "-n", "channel_layer", "--no-capture-output", "uvicorn", "channel_layer:app", "--host", "0.0.0.0", "--port", "9000"]
