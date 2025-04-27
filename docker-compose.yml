@@ -5,7 +5,7 @@ services:
       - "9000:9000"
     environment:
       - UVICORN_RELOAD=true
-      - FORWARD_TEXT_URL=http://host.docker.internal:8000/test
+      - FORWARD_TEXT_URL=http://host.docker.internal:8090/api/transfer
       - REQUEST_SEGMENT_SIZE=150
       - ERROR_CHANCE=0.08
       - LOSS_CHANCE=0.01
